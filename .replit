@@ -9,7 +9,7 @@ runButton = "Project"
 [[workflows.workflow]]
 name = "Project"
 mode = "parallel"
-author = "agent"
+
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
@@ -17,7 +17,7 @@ args = "Quantum Lotto Bot"
 
 [[workflows.workflow]]
 name = "Quantum Lotto Bot"
-author = "agent"
+
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
