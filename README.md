@@ -64,13 +64,15 @@ Every pull result includes persistent buttons:
 
 ### Getting a Discord Bot Token
 1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
-2. Create a new application
-3. Go to the "Bot" section and create a bot
-4. Copy the token
-5. Enable these **Privileged Gateway Intents**:
-   - Message Content Intent
-   - Server Members Intent (optional)
-   - Presence Intent (optional)
+2. Click "New Application" and give it a name (e.g., "Quantum Lotto")
+3. Go to the "Bot" section in the left sidebar
+4. Click "Reset Token" to generate a new token (or "Copy" if one exists)
+5. **IMPORTANT**: Scroll down to "Privileged Gateway Intents" and enable:
+   - ✅ **Message Content Intent** (REQUIRED - allows bot to track messages for instability)
+   - ✅ **Presence Intent** (optional)
+   - ✅ **Server Members Intent** (optional)
+6. Click "Save Changes" at the bottom
+7. Copy your bot token and add it to Replit Secrets as `DISCORD_TOKEN`
 
 ### Bot Permissions
 Your bot needs these permissions:

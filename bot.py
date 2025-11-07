@@ -31,7 +31,6 @@ class QuantumLottoBot(discord.Client):
         # Set up intents
         intents = discord.Intents.default()
         intents.message_content = True
-        intents.guilds = True
         
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
@@ -71,7 +70,7 @@ class QuantumLottoBot(discord.Client):
         # Increment message count in database
         await database.increment_message_count()
         
-        # Increase instability slightly
+        # Icrease instability slightly
         new_instability = await database.update_instability(INSTABILITY_INCREASE_PER_MESSAGE)
         
         # Small chance to send chaos message at high instability
@@ -90,7 +89,7 @@ class QuantumLottoBot(discord.Client):
         """Periodically check if universe should collapse"""
         current = await database.get_instability()
         
-        # Check if we've exceeded the collapse threshold
+        # Check if we have exceeded the collapse threshold
         if current >= self.collapse_threshold:
             await self.trigger_universe_collapse()
             # Set new random threshold
