@@ -31,6 +31,7 @@ class QuantumLottoBot(discord.Client):
         # Set up intents
         intents = discord.Intents.default()
         intents.message_content = True
+        intents.guilds = True
         
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
@@ -94,7 +95,6 @@ class QuantumLottoBot(discord.Client):
             await self.trigger_universe_collapse()
             # Set new random threshold
             self.collapse_threshold = random.uniform(COLLAPSE_THRESHOLD_MIN, COLLAPSE_THRESHOLD_MAX)
-    
     @tasks.loop(minutes=5)
     async def passive_instability_increase(self):
         """Slowly increase instability over time"""
@@ -223,7 +223,7 @@ async def pull_command(interaction: discord.Interaction):
             inline=False
         )
     
-    embed.set_footer(text="Quantum Lotto • May the odds collapse in your favor")
+    embed.set_footer(text="Quantum Lotto v1.1")
     
     # Create persistent buttons
     view = LootButtons()
