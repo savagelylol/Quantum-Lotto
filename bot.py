@@ -478,16 +478,14 @@ class LootButtons(discord.ui.View):
 
 async def get_discord_token():
     """Get Discord bot token from environment"""
-    # Get token from environment variable
     token = os.getenv('DISCORD_TOKEN')
     if token:
         print("✅ Using Discord bot token from environment")
         return token
     
     raise ValueError(
-        "❌ No Discord bot token found!\n"
-        "Please set DISCORD_TOKEN in your Replit Secrets.\n"
-        "Get your bot token from: https://discord.com/developers/applications"
+        "❌ No Discord bot token found dumbass!\n"
+
     )
 
 
